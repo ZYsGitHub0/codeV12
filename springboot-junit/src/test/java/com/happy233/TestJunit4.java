@@ -9,7 +9,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * 测试Spring整合Junint4
+ * 测试Spring整合Junit4
  * 约定：该测试类必须在Springboot启动类同级目录或子目录下 否则无法找到启动类
  * 如果要解决需要指定@ContextConfiguration
  *
