@@ -1,0 +1,11 @@
+server:
+  port: 80
+
+#spring自动配置数据源 默认整合的 HikariCP
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatislearn?characterEncoding=utf-8
+    username: root
+    password: 1234
+
