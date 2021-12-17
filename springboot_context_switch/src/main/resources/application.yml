@@ -6,3 +6,8 @@ spring:
 #环境切换方式2. 在启动配置中配置VM options: -Dspring。profiles.active=xxx
 
 #环境切换方式3. 以jar包方式启动 package后会在target目录生成jar包 使用命令行(本地或idea自带命令行) java- [jar包名称] --spring.profiles.active=xxx
+
+#项目内部的配置文件加载顺序
+#resource/config 中的 applicatiom.yml比类路径下的优先级更高
+#项目路径比工程(模块)路径config更高
+#项目路径/config比项目路径的更高
