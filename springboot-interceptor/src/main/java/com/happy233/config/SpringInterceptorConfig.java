@@ -23,6 +23,6 @@ public class SpringInterceptorConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(testInterceptor).addPathPatterns("/test/**");
+        registry.addInterceptor(testInterceptor).addPathPatterns("/test/*").excludePathPatterns("/css/*.css");
     }
 }
