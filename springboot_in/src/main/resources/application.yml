@@ -1,3 +1,26 @@
 #定义一个变量
+#使用缩进表示层级关系
 USER:
-  NAME2: zhangsan
+  NAME2: zhangsan #数值前一定要有一个空格
+
+#键值对
+#person:
+#  name: 张三
+#  age:我门来使用动态代理实现代理我们后面写的UserService 18
+#单行配置
+person: {name: 张三,age: 19}
+
+#数组
+address:
+  - 北京
+  - 上海
+  - 广东
+#单行配置
+#address2 : [北京,上海,广东]
+
+#纯量(常量值)
+msg1: 'Hello \n world' #单引号忽略转义字符
+msg2: "Hello \n world" #双引识别转义字符
+
+#参数引用
+name: ${USER.NAME2}
