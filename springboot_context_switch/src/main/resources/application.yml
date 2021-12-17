@@ -22,6 +22,6 @@ spring:
 #设置静态资源位置(会覆盖掉约定的4个默认文件)
   resources:
     static-locations: classpath:img
-#该方法不会覆盖(必须搭spring.resources.static-locations使用)
+#自定义访问静态资源的路径
   mvc:
     static-path-pattern: /web/**
