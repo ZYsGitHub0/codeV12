@@ -1,9 +1,12 @@
 package com.happy233;
 
+import com.happy233.pojo.Man;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication//标识当前类是springboot启动类/引导类
+@EnableConfigurationProperties(Man.class)//高级配置 启用配置属性将Man加入spring容器 或者可以给Man加@Componet注解
 public class HelloApplication {
     public static void main(String[] args) {
         //为什么需要启动类.class字节码文件？

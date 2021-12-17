@@ -24,3 +24,20 @@ msg2: "Hello \n world" #双引识别转义字符
 
 #参数引用
 name: ${USER.NAME2}
+
+#init 在pojo.Man 添加@ConfigurationProperties(prefix = "init.man")
+init:
+  man:
+    username: 路飞
+    boss: true
+    birth: 1999/03/09 10:00:00
+    age: 22
+    address: [广东,上海,北京]
+    addressList: [佛山,深圳,广州]
+    hobbies:
+      sports: [basketball,football]
+      play: [dnf,cf,qqspeed]
+    woman:
+      username: 娜美
+      age: 22
+      address: [swing,sex]

@@ -1,6 +1,8 @@
 package com.happy233.controller;
 
 
+import com.happy233.pojo.Man;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,9 +25,17 @@ public class YmlBaseController {
     @Value("${name}")
     private String name3;
 
+    @Autowired
+    private Man man;
+
     @GetMapping("/getPerson")
     public String getPerson() {
-        return "name:" + name + "--age=" + age + "--address:" + address + "--msg1:" + msg1 + "--msg2:" + msg2+"--name参数引用:"+name3;
+        return "name:" + name + "--age=" + age + "--address:" + address + "--msg1:" + msg1 + "--msg2:" + msg2 + "--name参数引用:" + name3;
+    }
+
+    @GetMapping("/getMan")
+    public Man getMan() {
+        return man;
     }
 
 
