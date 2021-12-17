@@ -3,6 +3,7 @@
 spring:
   profiles:
     active: test
+
 #环境切换方式2. 在启动配置中配置VM options: -Dspring。profiles.active=xxx
 
 #环境切换方式3. 以jar包方式启动 package后会在target目录生成jar包 使用命令行(本地或idea自带命令行) java- [jar包名称] --spring.profiles.active=xxx
@@ -14,3 +15,13 @@ spring:
 
 #项目外部的配置文件加载顺序
 #命令行方式 打成jar包后 java [jar包名称] 优先级顺序 jar同级目录/config下>jar包同级目录下>jar包中的config下>jar包resource下(类路径下)
+
+#静态资源(约定)
+#静态资源如果放置在 resources下的 META-INF/resource  public  resources static 这些目录下可以直接 域名/资源名访问
+#如果不是放置在以上文件则可以通过设置:
+#设置静态资源位置(会覆盖掉约定的4个默认文件)
+  resources:
+    static-locations: classpath:img
+#该方法不会覆盖(必须搭spring.resources.static-locations使用)
+  mvc:
+    static-path-pattern: /web/**
