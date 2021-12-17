@@ -11,3 +11,6 @@ spring:
 #resource/config 中的 applicatiom.yml比类路径下的优先级更高
 #项目路径比工程(模块)路径config更高
 #项目路径/config比项目路径的更高
+
+#项目外部的配置文件加载顺序
+#命令行方式 打成jar包后 java [jar包名称] 优先级顺序 jar同级目录/config下>jar包同级目录下>jar包中的config下>jar包resource下(类路径下)
