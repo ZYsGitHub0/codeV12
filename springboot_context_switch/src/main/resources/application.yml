@@ -1,0 +1,8 @@
+#激活环境 dev 填写配置文件名-后面的内容即可
+#环境切换方式1.
+spring:
+  profiles:
+    active: test
+#环境切换方式2. 在启动配置中配置VM options: -Dspring。profiles.active=xxx
+
+#环境切换方式3. 以jar包方式启动 package后会在target目录生成jar包 使用命令行(本地或idea自带命令行) java- [jar包名称] --spring.profiles.active=xxx
