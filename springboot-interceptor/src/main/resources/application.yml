@@ -1,3 +1,25 @@
 spring:
   profiles:
     active: dev
+
+  # 执行admin.server地址
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888  # admin 服务地址
+        instance:
+          prefer-ip: true   # 显示IP
+  application:
+    name: test-interceptor  # 项目名称
+
+management:
+  endpoints:
+    enabled-by-default: true #暴露所有端点信息
+    web:
+      exposure:
+        include: '*'  #以web方式暴露
+
+  endpoint:
+    health:
+      enabled: true   # 开启健康检查详细信息
+      show-details: always

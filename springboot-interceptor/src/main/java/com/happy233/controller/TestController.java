@@ -16,4 +16,9 @@ public class TestController {
     public String testInterceptor() {
         return "测试拦截器";
     }
+
+    @GetMapping("/actuator")
+    public String testActuator() {
+        return "测试健康检查 监控";
+    }
 }
