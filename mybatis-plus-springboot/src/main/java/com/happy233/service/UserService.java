@@ -1,5 +1,6 @@
 package com.happy233.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.happy233.exception.mapper.UserNoFoundException;
 import com.happy233.mapper.UserMapper;
@@ -60,5 +61,15 @@ public class UserService {
         userPage.setSize(2);//每页显示条数
         userMapper.selectPage(userPage, null);
         return userPage.getRecords();
+    }
+
+    public List<User> queryUserByWrapper() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper
+                .like("username", "张")//链式编程添加多个条件
+                .eq("sex", "男")
+                .orderByAsc("id");//根据id升序
+        return userMapper.selectList(queryWrapper);
+
     }
 }

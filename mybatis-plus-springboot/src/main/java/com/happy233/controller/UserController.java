@@ -54,4 +54,10 @@ public class UserController {
         List<User> userList = userService.pageUser(num);
         return userList;
     }
+
+    @RequestMapping("/query")
+    public List<User> queryWrapper() {
+       return userService.queryUserByWrapper();
+    }
+
 }
