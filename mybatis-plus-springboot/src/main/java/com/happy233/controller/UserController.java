@@ -1,11 +1,14 @@
 package com.happy233.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.happy233.pojo.User;
 import com.happy233.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author zy136
@@ -44,5 +47,11 @@ public class UserController {
         User user = User.builder().id(id).username(username).build();
         userService.updateUser(user);
         return "更新成功";
+    }
+
+    @RequestMapping("/page/{num}")
+    public List<User> pageUser(@PathVariable Integer num) {
+        List<User> userList = userService.pageUser(num);
+        return userList;
     }
 }

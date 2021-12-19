@@ -1,5 +1,6 @@
 package com.happy233.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.happy233.exception.mapper.UserNoFoundException;
 import com.happy233.mapper.UserMapper;
 import com.happy233.pojo.User;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author zy136
@@ -50,5 +52,13 @@ public class UserService {
         if (count != 1) {
             throw new UserNoFoundException("更新失败");
         }
+    }
+
+    public List<User> pageUser(Integer num) {
+        Page<User> userPage = new Page<>();
+        userPage.setCurrent(num);//设置当前页数
+        userPage.setSize(2);//每页显示条数
+        userMapper.selectPage(userPage, null);
+        return userPage.getRecords();
     }
 }
