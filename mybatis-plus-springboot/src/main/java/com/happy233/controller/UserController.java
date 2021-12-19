@@ -57,12 +57,17 @@ public class UserController {
 
     @RequestMapping("/query")
     public List<User> queryWrapper() {
-       return userService.queryUserByWrapper();
+        return userService.queryUserByWrapper();
     }
 
     @RequestMapping("/query2")
-    public List<User> queryWrapper2(){
+    public List<User> queryWrapper2() {
         return userService.queryUserByWrapper2();
+    }
+
+    @RequestMapping("/lambda")
+    public List<User> lambdaQueryWrapper() {
+        return userService.lambdaQuery();
     }
 
 

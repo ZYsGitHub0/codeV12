@@ -1,6 +1,8 @@
 package com.happy233.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.happy233.exception.mapper.UserNoFoundException;
 import com.happy233.mapper.UserMapper;
@@ -82,5 +84,12 @@ public class UserService {
                 .between("id", 41, 48);
         return userMapper.selectList(queryWrapper);
 
+    }
+
+    public List<User> lambdaQuery() {
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+//        LambdaQueryWrapper<User> objectLambdaQueryWrapper = Wrappers.lambdaQuery();
+        queryWrapper.le(User::getId, 45);
+        return userMapper.selectList(queryWrapper);
     }
 }
