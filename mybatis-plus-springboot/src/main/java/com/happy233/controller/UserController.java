@@ -60,4 +60,10 @@ public class UserController {
        return userService.queryUserByWrapper();
     }
 
+    @RequestMapping("/query2")
+    public List<User> queryWrapper2(){
+        return userService.queryUserByWrapper2();
+    }
+
+
 }

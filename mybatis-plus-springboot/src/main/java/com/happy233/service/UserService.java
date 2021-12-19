@@ -72,4 +72,15 @@ public class UserService {
         return userMapper.selectList(queryWrapper);
 
     }
+
+    public List<User> queryUserByWrapper2() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper
+                .like("username", "王")
+                .or()
+                .like("username", "张")
+                .between("id", 41, 48);
+        return userMapper.selectList(queryWrapper);
+
+    }
 }
