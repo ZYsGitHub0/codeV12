@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatislearn?characterEncoding=utf-8
+    username: root
+    password: 1234
+
+mybatis:
+  type-aliases-package: com.happy233.pojo #别名
+  mapper-locations: com/happy233/mappers/*Mapper.xml #如果mapper文件路径不与接口对应 则可以指定mapper地址
