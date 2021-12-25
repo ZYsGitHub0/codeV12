@@ -14,10 +14,6 @@ eureka:
     prefer-ip-address: true
     instance-id: ${eureka.instance.ip-address}:${server.port}
 
-logging:
-  level:
-    com.happy233: debug
-
 # 局部配置,配置负载均衡策略 IRule接口的实现类的全限定名
 #user-service:
 #  ribbon:
@@ -33,3 +29,7 @@ hystrix:
         errorThresholdPercentage: 50 # 触发熔断错误比例阈值，默认值50%
         sleepWindowInMilliseconds: 10000 # 熔断后休眠时长，默认值5秒
         requestVolumeThreshold: 10 # 触发熔断的最小请求次数，默认20
+#配置日志级别
+logging:
+  level:
+    com.happy233: debug
