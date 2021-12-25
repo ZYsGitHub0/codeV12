@@ -25,3 +25,8 @@ logging:
 # 全局配置,配置负载均衡策略
 #ribbon:
 #  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+hystrix:
+  command:
+    default:
+      execution.isolation.thread.timeoutInMilliseconds: 2000 #修改降级等待时间
+
