@@ -1,0 +1,7 @@
+/.idea
+/eureka-server/target
+/user-commons/target
+/user-consumer/target
+/user-service/target
+/target
+

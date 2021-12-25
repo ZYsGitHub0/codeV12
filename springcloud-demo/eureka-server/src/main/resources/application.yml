@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8888/eureka #集群时填写另一个eureka地址并开启客户端使两个eureka服务通信
+    fetch-registry: false #不拉取服务
+    register-with-eureka: false #不注册自己
+  server:
+    enable-self-preservation: false # 关闭自我保护模式（缺省为打开）
+
+spring:
+  application:
+    name: eureka-server
