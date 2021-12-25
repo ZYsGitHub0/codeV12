@@ -29,6 +29,9 @@ public class UserController {
     @RequestMapping("/{id}")
     @HystrixCommand(fallbackMethod = "findByIdFallBack")//对此方法开启降级服务 并指定回退的逻辑方法
     public User findById(@PathVariable Long id) {
+        if (id == 1) {
+            throw new RuntimeException("模拟异常");
+        }
         List<ServiceInstance> instances = discoveryClient.getInstances("user-service");
         System.out.println(instances.get(0).getUri());//获取Uri
         return restTemplate.getForObject("http://user-service/user/" + id, User.class);//使用这种方法 填写服务名 回自动获取uri填充
