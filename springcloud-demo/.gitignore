@@ -1,4 +1,5 @@
 /.idea
+/gateway-server/target
 /eureka-server/target
 /user-commons/target
 /user-consumer/target

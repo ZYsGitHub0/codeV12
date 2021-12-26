@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @author zy136
  * @date 2021/12/25 15:18
@@ -20,7 +22,8 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/{id}")
-    public User findById(@PathVariable Long id) {
+    public User findById(@PathVariable Long id, HttpServletRequest request) {
+        System.out.println(request.getHeader("info"));//打印网关中过滤器添加的请求头信息
         return userService.findById(id);
     }
 

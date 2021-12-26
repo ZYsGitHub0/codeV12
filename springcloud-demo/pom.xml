@@ -13,6 +13,7 @@
         <module>user-consumer</module>
         <module>user-service</module>
         <module>eureka-server</module>
+        <module>gateway-server</module>
     </modules>
 
     <parent>
